@@ -93,8 +93,7 @@ def get_all_extra_fields_inserts_request() -> str:
     extra_field_data = ExtraField.get_extra_fields_from_extra_field_data(required_extra_fields_datas, warehouse_id)
     if len(extra_fields_ids) != len(extra_field_data):
         data_ids = list(map(lambda ef: ef.id , extra_field_data))
-        list(set(extra_fields_ids).symmetric_difference(set(data_ids)))
-        raise Exception(f"{data_ids} in extra_field.csv not exist in extra_fields.json")
+        raise Exception(f"{list(set(extra_fields_ids).symmetric_difference(set(data_ids)))} in extra_field.csv not exist in extra_fields.json")
     request += '\n' + get_extra_field_insert_request(
         extra_field_data)
     request += '\n'

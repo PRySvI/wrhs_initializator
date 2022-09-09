@@ -95,10 +95,27 @@
   },
   {
     "id": "ORDER_GROUPING",
+    "default_value": "Yes",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
+  },
+  {
+    "id": "NON_STANDARD_ROBOT",
     "default_value": "No",
     "values": {
       "No": 1,
       "Yes": 2
+    }
+  },
+  {
+    "id": "MADE_IN",
+    "default_value": "All",
+    "values": {
+      "No": 1,
+      "Yes": 2,
+      "All": 3
     }
   }
 ]
