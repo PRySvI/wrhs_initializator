@@ -1,0 +1,104 @@
+[
+  {
+    "id": "QUICK_PICK",
+    "default_value": "No",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
+  },
+  {
+    "id": "SORTING_KEYS_SPLIT",
+    "default_value": "No",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
+  },
+  {
+    "id": "TABLET",
+    "default_value": "No",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
+  },
+  {
+    "id": "VOCAL",
+    "default_value": "No",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
+  },
+  {
+    "id": "FULL_BOXES_ONLY",
+    "default_value": "No",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
+  },
+  {
+    "id": "FULL_PALLET",
+    "default_value": "No",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
+  },
+  {
+    "id": "SMART_WAVE",
+    "default_value": "N",
+    "values": {
+      "C": 1,
+      "M": 2,
+      "N": 3,
+      "O": 4,
+      "S": 5
+    }
+  },
+  {
+    "id": "SUPER_QUICK_PICK",
+    "default_value": "No",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
+  },
+  {
+    "id": "SORTABLE_PRODUCTS",
+    "default_value": "All",
+    "values": {
+      "No": 1,
+      "Yes": 2,
+      "All": 3
+    }
+  },
+  {
+    "id": "PUSH_UE_SELECTION",
+    "default_value": "All",
+    "values": {
+      "No": 1,
+      "Yes": 2,
+      "All": 3
+    }
+  },
+  {
+    "id": "PRODUCTS_TO_LABEL",
+    "default_value": "All",
+    "values": {
+      "No": 1,
+      "Yes": 2,
+      "All": 3
+    }
+  },
+  {
+    "id": "ORDER_GROUPING",
+    "default_value": "No",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
+  }
+]
