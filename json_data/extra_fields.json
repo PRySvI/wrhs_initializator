@@ -41,10 +41,11 @@
   },
   {
     "id": "FULL_PALLET",
-    "default_value": "No",
+    "default_value": "All",
     "values": {
       "No": 1,
-      "Yes": 2
+      "Yes": 2,
+      "All": 3
     }
   },
   {

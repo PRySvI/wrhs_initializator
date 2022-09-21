@@ -5,7 +5,7 @@ Download  python 3.10 [here](https://www.python.org/ftp/python/3.10.7/python-3.1
 Install python tutorial [here](https://www.youtube.com/watch?v=i-MuSAwgwCU)
 
 ### To covert csv to request
-run file [./generate.bat](generate.bat) (double click)
+run file [./generate.bat](generate_FR.bat) (double click)
 
 or use command
 ```bash 

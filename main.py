@@ -3,7 +3,6 @@ import os
 
 from extra_field_extractor import get_all_extra_fields_inserts_request
 
-
 def covertToSQL(filename: str, column, suffix):
     print(f'converting: {filename}')
     result = ''
@@ -37,9 +36,9 @@ def write_to_result(result):
     file_object.close()
 
 
-def convert_destinations(filename: str, suffix):
+def convert_destinations(filename: str, suffix, lang: str):
     from destinations import load_destinations
-    write_to_result(load_destinations(filename, suffix))
+    write_to_result(load_destinations(filename, suffix, lang))
 
 
 def convert_extra_fields():
@@ -47,6 +46,14 @@ def convert_extra_fields():
 
 
 def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(description='Initilizator information')
+    parser.add_argument('--lang', dest='lang', type=str, help='Lang of parsing')
+    args = parser.parse_args()
+    lang = args.lang
+    print(f'started to parse with language {lang} \n')
+
     try:
         os.remove("result.sql")
     except FileNotFoundError:
@@ -72,18 +79,17 @@ def main():
     # (name, type_id, type_name, third_number, third_sub_number, warehouse_id)
     convert_destinations('csv/destinations.csv',
                          "ON CONFLICT (type_id, third_number, third_sub_number, warehouse_id) DO UPDATE SET name = EXCLUDED.name, "
-                         "warehouse_id = EXCLUDED.warehouse_id;")
+                         "warehouse_id = EXCLUDED.warehouse_id;", lang)
 
     covertToSQL('csv/box_label_printers.csv', 'pickingwavebox.box_label_printers',
                 "ON CONFLICT (id, warehouse_id) DO NOTHING;")
 
-    covertToSQL('csv/item_label_printers.csv', 'pickingwavebox.item_label_printers',
-                "ON CONFLICT (id, warehouse_id) DO NOTHING;")
+    # covertToSQL('csv/item_label_printers.csv', 'pickingwavebox.item_label_printers',
+    #             "ON CONFLICT (id, warehouse_id) DO NOTHING;")
 
     convert_extra_fields()
 
 
 if __name__ == '__main__':
-    print('started \n')
     main()
     print('\nsuccess ')
