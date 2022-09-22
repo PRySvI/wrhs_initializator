@@ -89,8 +89,8 @@ def main():
                          "ON CONFLICT (type_id, third_number, third_sub_number, warehouse_id) DO UPDATE SET name = EXCLUDED.name, "
                          "warehouse_id = EXCLUDED.warehouse_id;", lang)
 
-    # covert_to_sql('csv/box_label_printers.csv', 'pickingwavebox.box_label_printers',
-    #               "ON CONFLICT (id, warehouse_id) DO NOTHING;")
+    covert_to_sql('csv/box_label_printers.csv', 'pickingwavebox.box_label_printers',
+                  "ON CONFLICT (id, warehouse_id) DO NOTHING;")
 
     # verifyHash('item_label_printers')
     # covertToSQL('csv/item_label_printers.csv', 'pickingwavebox.item_label_printers',
