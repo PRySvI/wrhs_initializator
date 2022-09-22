@@ -3,6 +3,7 @@ import os
 
 import csv
 from extra_field import ExtraFieldData, ExtraFieldValue, ExtraField
+from warehouses_checker import extract_wh
 
 # def get_inserts():
 
@@ -18,6 +19,7 @@ def get_wh_id_and_extra_fields_id_from_csv() -> dict[str, list[str]]:
     with open(current_path + '/csv/extra_fields.csv', mode='r', encoding='UTF8') as csv_file:
         csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
+            extract_wh(row)
             ef_id = row.get(key_extra_field_id)
             warehouse_id = row.get(key_warehouse_id)
             if not ef_id:

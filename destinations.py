@@ -1,4 +1,5 @@
 import csv
+from warehouses_checker import extract_wh
 
 
 def get_type_name_by_id_and_lang(id: int, lang: str):
@@ -23,6 +24,7 @@ def load_destinations(filename: str, suffix, lang="fr"):
                  " (name, type_id, type_name, third_number, third_sub_number, warehouse_id) VALUES \n"
 
         for row in csv_reader:
+            extract_wh(row)
             # print(f'\t {row["name"]}.')
             name = row['name']
             if name == '':

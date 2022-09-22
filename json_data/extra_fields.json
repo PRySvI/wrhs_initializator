@@ -118,5 +118,13 @@
       "Yes": 2,
       "All": 3
     }
+  },
+  {
+    "id": "STANDARD_ROBOT",
+    "default_value": "No",
+    "values": {
+      "No": 1,
+      "Yes": 2
+    }
   }
 ]
