@@ -4,7 +4,7 @@ from warehouses_checker import extract_wh
 
 def get_type_name_by_id_and_lang(id: int, lang: str):
     types = dict()
-    types['7'] =  {'fr': 'Magasins Stores', 'es': 'Tiendas'}
+    types['7'] = {'fr': 'Magasins Stores', 'es': 'Tiendas'}
     types['10'] = {'fr': 'Secteurs entrepot', 'es': 'Sectores almacén'}
     types['25'] = {'fr': 'Zone logistique', 'es': 'Área de logística'}
     types['43'] = {'fr': 'Groupe logistique', 'es': 'Grupo logistico'}
@@ -33,6 +33,8 @@ def load_destinations(filename: str, suffix, lang="fr"):
                 name = 'WRONG_DEFINED_NAME'
             if "'" in name:
                 name = name.replace("'", "''")
+            if len(name) < 3:
+                name = "SHORT_NAME_PREFIX_" + name
 
             type_id = row['type_id']
             type_name = get_type_name_by_id_and_lang(type_id, lang)
